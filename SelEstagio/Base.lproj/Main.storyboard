@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="SelEstagio" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -15,11 +17,107 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="9kD-wh-y9H">
+                                <rect key="frame" x="0.0" y="20" width="600" height="325"/>
+                            </mapView>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="map" translatesAutoresizingMaskIntoConstraints="NO" id="qA5-7J-WIT">
+                                <rect key="frame" x="540" y="30" width="48" height="48"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f89-FY-DE0">
+                                <rect key="frame" x="265" y="353" width="70" height="34"/>
+                                <color key="backgroundColor" red="0.39211775297496809" green="0.48522186505507958" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="70" id="PkM-lg-q9T"/>
+                                    <constraint firstAttribute="height" constant="34" id="a86-hW-W4d"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Verdana-BoldItalic" family="Verdana" pointSize="14"/>
+                                <state key="normal" title="Buscar">
+                                    <color key="titleColor" red="0.017711060209424034" green="0.017711060209424034" blue="0.017711060209424034" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="botaoBuscar:" destination="BYZ-38-t0r" eventType="touchUpInside" id="eDQ-6U-p5B"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nome da Cidade" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="izj-B5-8CN">
+                                <rect key="frame" x="215" y="395" width="170" height="32"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="32" id="kXA-zg-GF4"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Verdana-BoldItalic" family="Verdana" pointSize="15"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Temp máxima" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N9W-NW-Ib9">
+                                <rect key="frame" x="215" y="446" width="170" height="32"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="32" id="udn-wb-1fX"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Verdana-BoldItalic" family="Verdana" pointSize="15"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Temp mínima" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QLW-jQ-KdI">
+                                <rect key="frame" x="215" y="496" width="170" height="32"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="32" id="yFJ-Te-mDV"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Verdana-BoldItalic" family="Verdana" pointSize="15"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Descrição do Tempo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tjf-HX-apv">
+                                <rect key="frame" x="215" y="536" width="170" height="50"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="a29-Mf-0de"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Verdana-BoldItalic" family="Verdana" pointSize="15"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.50473261945243464" green="1" blue="0.47355363460643751" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="9kD-wh-y9H" firstAttribute="centerX" secondItem="f89-FY-DE0" secondAttribute="centerX" id="2p0-U5-uTz"/>
+                            <constraint firstItem="QLW-jQ-KdI" firstAttribute="trailing" secondItem="tjf-HX-apv" secondAttribute="trailing" id="4gE-gS-CQ6"/>
+                            <constraint firstItem="QLW-jQ-KdI" firstAttribute="top" secondItem="N9W-NW-Ib9" secondAttribute="bottom" constant="18" id="8wh-73-rFe"/>
+                            <constraint firstItem="f89-FY-DE0" firstAttribute="top" secondItem="9kD-wh-y9H" secondAttribute="bottom" constant="8" symbolic="YES" id="Aug-WE-IeM"/>
+                            <constraint firstItem="N9W-NW-Ib9" firstAttribute="top" secondItem="izj-B5-8CN" secondAttribute="bottom" constant="19" id="FLw-iE-UAK"/>
+                            <constraint firstItem="N9W-NW-Ib9" firstAttribute="leading" secondItem="QLW-jQ-KdI" secondAttribute="leading" id="Gvl-uA-nZZ"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="tjf-HX-apv" secondAttribute="bottom" constant="14" id="HBp-qB-8tr"/>
+                            <constraint firstAttribute="trailing" secondItem="9kD-wh-y9H" secondAttribute="trailing" id="Heg-jW-z5V"/>
+                            <constraint firstItem="qA5-7J-WIT" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="10" id="I0l-Dp-kLz"/>
+                            <constraint firstItem="f89-FY-DE0" firstAttribute="centerX" secondItem="izj-B5-8CN" secondAttribute="centerX" id="I10-Bl-ijD"/>
+                            <constraint firstItem="9kD-wh-y9H" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="KK0-O7-9Fm"/>
+                            <constraint firstItem="izj-B5-8CN" firstAttribute="leading" secondItem="N9W-NW-Ib9" secondAttribute="leading" id="PHZ-Gj-vJi"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="qA5-7J-WIT" secondAttribute="trailing" constant="-8" id="QMa-7f-r8T"/>
+                            <constraint firstItem="izj-B5-8CN" firstAttribute="trailing" secondItem="N9W-NW-Ib9" secondAttribute="trailing" id="Snx-wQ-dgL"/>
+                            <constraint firstItem="QLW-jQ-KdI" firstAttribute="leading" secondItem="tjf-HX-apv" secondAttribute="leading" id="U77-Ee-fIM"/>
+                            <constraint firstItem="N9W-NW-Ib9" firstAttribute="trailing" secondItem="QLW-jQ-KdI" secondAttribute="trailing" id="V2n-gJ-haC"/>
+                            <constraint firstItem="9kD-wh-y9H" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="Wgt-su-ChB"/>
+                            <constraint firstItem="tjf-HX-apv" firstAttribute="top" secondItem="QLW-jQ-KdI" secondAttribute="bottom" constant="8" symbolic="YES" id="Xpb-Ym-BV8"/>
+                            <constraint firstItem="izj-B5-8CN" firstAttribute="top" secondItem="f89-FY-DE0" secondAttribute="bottom" constant="8" symbolic="YES" id="qMx-BT-D8i"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="pr4-tG-aWZ"/>
+                    <connections>
+                        <outlet property="descriTempo" destination="tjf-HX-apv" id="XoM-lC-Fms"/>
+                        <outlet property="inputMapView" destination="9kD-wh-y9H" id="Mye-1b-sok"/>
+                        <outlet property="nomeCidade" destination="izj-B5-8CN" id="kHR-9v-uxS"/>
+                        <outlet property="tempMax" destination="N9W-NW-Ib9" id="6aR-48-rCS"/>
+                        <outlet property="tempMin" destination="QLW-jQ-KdI" id="5ga-4T-ZHl"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="-687" y="-414"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="map" width="48" height="48"/>
+    </resources>
 </document>
